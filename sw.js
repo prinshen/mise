@@ -1,5 +1,5 @@
 const PREFIX = 'mise-app-';
-const CACHE = PREFIX + 'v3';
+const CACHE = PREFIX + 'v4';
 const CORE = [
   './', './index.html', './manifest.webmanifest', './icon-180.png', './icon-512.png',
   'https://unpkg.com/react@18.3.1/umd/react.production.min.js',
