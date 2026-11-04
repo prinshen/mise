@@ -31,10 +31,10 @@
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
   html,body{height:100%; margin:0;}
-  body{position:fixed; inset:0; width:100%; overflow:hidden; background:var(--paper); color:var(--ink);
+  body{width:100%; overflow:hidden; background:var(--paper); color:var(--ink);
     font-family:"Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
-  #root{height:100%;}
-  .app{display:flex; flex-direction:column; height:100%;}
+  #root{height:100vh; height:100dvh;}
+  .app{display:flex; flex-direction:column; height:100%; min-height:0;}
 
   .header{flex:none; padding:calc(env(safe-area-inset-top) + 14px) 20px 14px; display:flex; align-items:center; gap:12px;
     background:linear-gradient(var(--paper), rgba(247,244,236,.86)); backdrop-filter:saturate(1.1) blur(8px);
@@ -45,7 +45,7 @@
     border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer;}
   .iconbtn:active{transform:scale(.94);}
 
-  .content{flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior-y:contain; padding:18px 16px 110px;}
+  .content{flex:1 1 0; min-height:0; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior-y:contain; padding:18px 16px 110px;}
 
   .nav{flex:none; display:flex; justify-content:space-around; align-items:flex-start; padding:10px 8px 30px;
     background:var(--card); border-top:1px solid var(--line); box-shadow:0 -2px 14px rgba(40,36,24,.04);}
@@ -162,7 +162,7 @@
   .h-title{font-size:32px;letter-spacing:-.04em;}
   .h-sub{margin-top:6px;color:#73796B;}
   .content{padding:8px 22px 32px;scrollbar-width:thin;}
-  .nav{padding:12px 10px calc(env(safe-area-inset-bottom) + 13px);background:rgba(255,255,255,.94);border-radius:24px 24px 0 0;}
+  .nav{margin:0; padding:8px 10px max(8px, env(safe-area-inset-bottom));background:rgba(255,255,255,.94);border-radius:0;}
   .tab{padding:2px;min-width:0;flex:1;gap:5px;}
   .tab .pill{width:46px;height:33px;}
   .tab span{font-size:10px;}
@@ -196,7 +196,7 @@
   .recipe-card:hover,.day:hover{border-color:#AABA9F;}
   .ing .nm,.s-item .sn{white-space:normal;overflow-wrap:anywhere;}
   .toast{max-width:calc(100% - 32px);text-align:center;bottom:100px;}
-  @media(min-width:650px){.content{padding:16px 32px 40px;}.header{padding-left:32px;padding-right:32px;}h2{font-size:36px;}.recipe-grid{grid-template-columns:1fr 1fr;}.nav{margin:0 24px 14px;border-radius:22px;border:1px solid var(--line);padding-bottom:12px;}.tab span{font-size:12px;}}
+  @media(min-width:650px){.content{padding:16px 32px 40px;}.header{padding-left:32px;padding-right:32px;}h2{font-size:36px;}.recipe-grid{grid-template-columns:1fr 1fr;}.nav{margin:0;border-radius:0;}.tab span{font-size:12px;}}
   @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;}}
 
 </style>
